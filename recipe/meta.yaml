@@ -1,5 +1,5 @@
 {% set name = "dtool_ibeis" %}
-{% set version = "1.0.2" %}
+{% set version = "1.1.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/dtool_ibeis/dtool_ibeis-{{ version }}.tar.gz
-  sha256: 47e2e0168e1c069d158bff917c5534eed3a5f30348359439cbda74b0c3a012de
+  sha256: ca49bb5cab66c6cca8aa99fb5717479b9bf5f44621beb76fa652b225eca7d397
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
