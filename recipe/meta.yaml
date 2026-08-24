@@ -28,6 +28,7 @@ requirements:
     - ubelt
     - parse
     - networkx
+    - cachetools
 
 test:
   imports:
