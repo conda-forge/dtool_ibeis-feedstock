@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: dtool_ibeis
+  version: "1.2.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/dtool_ibeis/dtool_ibeis-${{ version }}.tar.gz
+  sha256: 9674d6ef4a3a13f4fa0fb938e2987a105d6a42e31114922f51dc9874a31ef7ef
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - six
+    - numpy
+    - utool
+    - ubelt
+    - parse
+    - networkx
+    - cachetools
+
+tests:
+  - python:
+      imports:
+        - dtool_ibeis
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Data Tools
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/Erotemic/dtool_ibeis
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
